@@ -1,0 +1,11 @@
+hr{
+  border:0;
+  height: 2px;
+  background-color: #573b95;
+  margin: 10px 0;
+  color: #573b95;
+}
+
+.btn-purple{
+  background-color: #573b95; color: #fff !important;
+}
