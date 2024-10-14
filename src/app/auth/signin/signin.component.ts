@@ -1,20 +1,22 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ConfirmDialogService } from '../../shared/services/confirm-dialog.service';
+import { MATERIAL_MODULES } from '../../shared/material/material.imports';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,MATERIAL_MODULES],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
 export default class SigninComponent {
 private _formBuilder = inject(FormBuilder);
 
-form = this._formBuilder.group({
-  email:['',[Validators.required]],
-  password:['',[Validators.required]],
+loginForm = this._formBuilder.group({
+  Username:['',[Validators.required]],
+  Password:['',[Validators.required]],
 })
 
  ConfirmDialog= inject(ConfirmDialogService);
@@ -29,4 +31,9 @@ form = this._formBuilder.group({
     () => {}
   );
  }
+
+
+ login_onClick(){}
+
+
 }

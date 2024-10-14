@@ -1,11 +1,9 @@
 hr{
   border:0;
-  height: 2px;
-  background-color: #573b95;
-  margin: 10px 0;
-  color: #573b95;
+  height: 4px;
+  background-color: hsl(234, 85%, 51%);
+
+  color: hsl(234, 85%, 51%);
 }
 
-.btn-purple{
-  background-color: #573b95; color: #fff !important;
-}
+

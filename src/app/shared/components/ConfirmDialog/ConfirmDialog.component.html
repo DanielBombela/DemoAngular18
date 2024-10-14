@@ -1,0 +1,19 @@
+<div class="p-3 mx-2">
+  <div class="d-flex justify-content-center align-items-center mb-0">
+    <p class="" > <mat-icon color="accent" >info</mat-icon></p>
+    <h2 class="text-center fw-bold ms-2 text-color-accent ">  Confirmación</h2>
+  </div>
+
+
+
+  <p class="text-center mt-0 h6">{{mensaje}}</p>
+  <div class="d-flex justify-content-center mt-3 me-3 ms-3">
+    <button class="border" (click)="confirmado()" color="primary" mat-button>
+      Aceptar
+    </button>
+    <button class="border"  (click)="cerrarDialogo()"   color="primary" class=" ms-3 me-3 " mat-button>
+      No
+    </button>
+
+  </div>
+</div>
