@@ -17,6 +17,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSortModule } from '@angular/material/sort';
+import {  MatPaginatorModule } from '@angular/material/paginator';
 // Importa otros módulos de Angular Material que necesites
 
 export const MATERIAL_MODULES = [
@@ -36,5 +38,7 @@ export const MATERIAL_MODULES = [
   MatExpansionModule,
   MatAutocompleteModule,
   MatSidenavModule,
-  MatToolbarModule
-];
+  MatToolbarModule,
+  MatSortModule,
+  MatPaginatorModule
+]
