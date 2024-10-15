@@ -1,11 +1,11 @@
 
-<mat-toolbar class="d-flex justify-content-between px-5 align-items-center bg-dark mat-elevation-z3">
+<mat-toolbar class="d-flex justify-content-between px-5 align-items-center bg-color-accent mat-elevation-z3">
 
   <div class="d-flex align-items-center ">
     <button mat-icon-button (click)="collapsed.set(!collapsed())">
       <mat-icon class="text-white">menu</mat-icon>
     </button>
-    <h1 class="text-white ms-3">PESTWAREAPP</h1>
+    <h1 class="text-white ms-3">PANEL PESTWARE</h1>
   </div>
   <div class="s">
     <button matTooltip="Cerrar sesión" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -14,46 +14,172 @@
   </div>
 
 </mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+
+<!-- class="	d-none d-sm-block"-->
+<!-- *ngIf="!mobileQuery.matches"-->
+<mat-sidenav-container   >
+  <mat-sidenav class="shadow" opened mode="side" [style.width]="sidenavWidth()">
+
     <div class="sidenav-header">
       <img
         [width]="profilePicSize()"
         [height]="profilePicSize()"
-        src="https://pestwareapp.com/loginew/img/logo.svg"
+        src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?size=338&ext=jpg&ga=GA1.1.1880011253.1728864000&semt=ais_hybrid"
       />
       <div class="header-text" [class.hide-header-text]="collapsed()">
-        <h2>Your channel</h2>
-        <p>Zoaib Khan</p>
+        <h2>Juan Daniel Bombela Rivera</h2>
+        <p></p>
       </div>
     </div>
 
-  <mat-nav-list  >
-  <mat-list-item class="menu-item ">
-    <mat-icon matListItemIcon>folder</mat-icon>
-    <div matListItemTitle>sdfsdfdf</div>
+    <mat-nav-list  >
+      @for(item of itemsMenu; track item.name) {
+        <mat-list-item
+        (click)="item.children.length > 0  ? item.isActive = !item.isActive : null"
 
-  </mat-list-item>
+          class="pe-3"
+          [routerLink]="item.route"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">
 
-  <mat-list-item class="menu-item">
-    <mat-icon matListItemIcon >folder</mat-icon>
-    <div matListItemTitle>sdfsdfdf</div>
+          <div class="d-flex align-items-center">
+            <mat-icon [matTooltip]="item.name" class="menu-icon icon-gray" matListItemIcon>{{item.icon}}</mat-icon>
+            <span class="ms-4 menu-text text-gray">{{item.name}}</span>
+            @if(item.children.length > 0) {
+              <span class="mt-2 ps-4" matListItemMeta>
+                @if(item.isActive) {
+                <mat-icon>expand_less</mat-icon>
+                } @else {
+                <mat-icon>expand_more</mat-icon>
+                }
+              </span>
+              }
+          </div>
 
-  </mat-list-item>
-</mat-nav-list>
 
+
+        </mat-list-item>
+        @if (item.isActive) {
+          @for(subItem of item.children; track subItem.name) {
+            <div class="" @expandContractMenu>
+              <mat-list-item
+
+          class="pe-3"
+          [routerLink]="subItem.route"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">
+
+
+          <div [ngClass]="{'ps-3': !collapsed()  }" class="d-flex align-items-center">
+            <mat-icon [matTooltip]="subItem.name" class="menu-icon icon-gray" matListItemIcon>{{subItem.icon}}</mat-icon>
+
+            @if(item.isActive) {
+              <span class="ms-4 menu-text">{{subItem.name}}</span>
+            }
+          </div>
+
+
+        </mat-list-item>
+
+
+
+
+
+            </div>
+          }
+
+          }
+      }
+
+
+
+
+    </mat-nav-list>
 
 
   </mat-sidenav>
   <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas voluptatum error repellendus est deserunt distinctio dolor ab accusantium mollitia tempora ipsam dolorem hic, assumenda libero. Quasi id commodi dolores magni.</div>
-    <div class="col-sm-12  col-md-6">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+    <div class="card shadow p-5">
+      <div class="folder-container">
+        <div class="folder">
+          <div class="folder-header text-center">Swopyn SA de CV ds dsv dssdvd dssdv  ssacd acas</div>
+        </div>
+        <div class="folder">
+          <div class="folder-header">📁 Carpeta 2</div>
+        </div>
+        <div class="folder">
+          <div class="folder-header">📁 Carpeta 3</div>
+        </div>
+        <div class="folder">
+          <div class="folder-header">📁 Carpeta 4</div>
+        </div>
+      </div>
 
-</div>
+
+    <router-outlet></router-outlet>
+
+
+
+    <div class="client-container">
+      <div class="client-card">
+        <div class="client-icon">
+          <img src="https://via.placeholder.com/60?text=Folder" alt="Cliente A" />
+        </div>
+        <div class="client-info">
+          <h3>Cliente A</h3>
+          <p>Email: clienteA.com</p>
+          <p>Teléfono: (123) 456-7890</p>
+        </div>
+      </div>
+
+      <div class="client-card">
+        <div class="client-icon">
+          <img src="https://via.placeholder.com/60?text=Folder" alt="Cliente B" />
+        </div>
+        <div class="client-info">
+          <h3>Cliente B</h3>
+          <p>Email: clienteB.com</p>
+          <p>Teléfono: (987) 654-3210</p>
+        </div>
+      </div>
+
+      <div class="client-card">
+        <div class="client-icon">
+        ELOGO
+        </div>
+        <div class="client-info">
+          <h3>Cliente C</h3>
+          <p>Email: clienteC.com</p>
+          <p>Teléfono: (555) 555-5555</p>
+        </div>
+      </div>
+
+      <div class="client-card">
+        <div class="client-icon">
+          <img src="https://via.placeholder.com/60?text=Folder" alt="Cliente D" />
+        </div>
+        <div class="client-info">
+          <h3>Cliente D</h3>
+          <p>Email: clienteD.com</p>
+          <p>Teléfono: (444) 444-4444</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>
+<!--
+
+
+<div class="d-block d-sm-none">
+  <router-outlet></router-outlet>
+</div>
+
+-->

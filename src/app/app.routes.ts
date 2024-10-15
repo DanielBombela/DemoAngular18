@@ -14,7 +14,7 @@ export const routes: Routes = [
       loadComponent:()=> import("./dashboard/dashboard.component"),
       children:[
         {
-            path:'',
+            path:'instances',
            loadComponent:() =>import("./dashboard/start/start.component"),
         },
         {
@@ -23,7 +23,7 @@ export const routes: Routes = [
         },
         {
             path:'**',
-            redirectTo:'',
+            redirectTo:'instances',
           },
       ]
     },
@@ -38,5 +38,5 @@ export const routes: Routes = [
       redirectTo:'dashboard',
       pathMatch:'full'
     },
- 
+
 ];

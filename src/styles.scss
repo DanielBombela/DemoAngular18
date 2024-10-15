@@ -8,8 +8,9 @@
 
 $var-color-primary:#3d91f0;
 $var-color-accent:#4c63b6;
-$var-color-warn:#07b0f0;
-html, body { height: 100%; background-color: #07b0f0; }
+$var-color-warn:#f0072a;
+
+html, body { height: 100%;  }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .text-color-primary{
@@ -18,7 +19,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-color-accent{
   color: $var-color-accent !important;
  }
+ .bg-color-primary{
+  background-color: $var-color-primary !important;
+ }
+ .bg-color-accent{
+  background-color: $var-color-accent !important;
+ }
 
+ .item-menu-selected:hover{
+  background-color: $var-color-accent !important;
+  color: #fff !important;
+ }
+
+
+.item-menu-selected:hover .mat-list-text {
+  color: #fff !important; /* Esto aplicará el color blanco al texto dentro del mat-list-item */
+}
 
  ::ng-deep .custom-style{
   background-color:brown !important;
