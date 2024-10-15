@@ -151,13 +151,6 @@ mat-list-item.active-link span {
 
 
 
-.server-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-
 
 
 
@@ -174,8 +167,9 @@ mat-list-item.active-link span {
 
 .client-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .client-card {
