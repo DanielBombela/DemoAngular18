@@ -8,14 +8,14 @@
 
       <mat-form-field class="" appearance="outline">
         <mat-label>Usuario</mat-label>
-        <input type="text" matInput formControlName="Username">
+        <input type="text" matInput formControlName="username">
 
       </mat-form-field>
 
 
       <mat-form-field class="" appearance="outline">
         <mat-label>Contraseña</mat-label>
-        <input type="password" matInput formControlName="Password"   autocomplete="off" readonly onfocus="this.removeAttribute('readonly')">
+        <input type="password" matInput formControlName="password"   autocomplete="off" readonly onfocus="this.removeAttribute('readonly')">
 
       </mat-form-field>
 
@@ -25,7 +25,7 @@
 
         <div class="ui-form-row">
 
-            <button class="py-3"  mat-flat-button color="accent" (click)="confirm()" [disabled]="!loginForm.valid">ENTRAR</button>
+            <button class="py-3"  mat-flat-button color="accent" (click)="login_onClick()" [disabled]="!loginForm.valid">ENTRAR</button>
         </div>
 
     </form>

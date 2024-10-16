@@ -14,13 +14,14 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export default class StartComponent {
    snackBar = inject( MatSnackBar);
+   
   sonner(){
     toast.success('Event has been created')
     ShowToast(
       'success',
       'Guardado correctamente'
     );
-    this.showSnackbarCssStyles();
+   // this.showSnackbarCssStyles();
 //Swal.fire('Error',"Ocurrio un error en el sistema, favor de contactar a soporte", 'error')
   }
 
